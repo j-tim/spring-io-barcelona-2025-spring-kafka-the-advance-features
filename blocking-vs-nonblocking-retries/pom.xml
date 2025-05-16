@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.example</groupId>
-        <artifactId>spring-io-barcelona-2025-spring-kafka-the-advance-features-playground</artifactId>
+        <artifactId>spring-io-barcelona-2025-spring-kafka-the-advance-features</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <artifactId>blocking-vs-nonblocking-retries</artifactId>
