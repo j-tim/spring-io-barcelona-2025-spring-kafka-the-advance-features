@@ -1,0 +1,53 @@
+server:
+  port: 8082
+
+stock:
+  quote:
+    consumer:
+      avro:
+        concurrency: 3
+      json:
+        concurrency: 3
+
+spring:
+  application:
+    name: spring-kafka-multiple-consumers-annotations
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+      group-id: vertical-scaling-consumer-group-avro
+      auto-offset-reset: earliest
+      properties:
+        schema.registry.url: http://localhost:8081
+        # We use Avro specific records here
+        specific.avro.reader: true
+
+    listener:
+      observation-enabled: true
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+    enabled: true
+  endpoints:
+    web:
+      exposure:
+        # Open up all Spring Boot Actuator endpoints for the demo, don't do this in production!
+        include: "*"
+
+  endpoint:
+    health:
+      show-details: always
+
+  metrics:
+    tags:
+      application: ${spring.application.name}
+      env: local
+  otlp:
+    tracing:
+      endpoint: "http://localhost:4317"
+      transport: grpc

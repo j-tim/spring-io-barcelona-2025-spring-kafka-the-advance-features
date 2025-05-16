@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>spring-io-barcelona-2025-spring-kafka-the-advance-features-playground</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>spring-io-barcelona-2025-talk-base</name>
+    <description>Spring Kafka project for Spring I/O 2025 Barcelona talk</description>
+
+    <modules>
+        <module>events</module>
+        <module>multiple-consumers-same-app</module>
+        <module>blocking-vs-nonblocking-retries</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.release>21</maven.compiler.release>
+
+        <rewrite-maven-plugin.version>6.8.0</rewrite-maven-plugin.version>
+        <rewrite-static-analysis.version>2.9.0</rewrite-static-analysis.version>
+        <rewrite-spring.version>6.7.0</rewrite-spring.version>
+        <rewrite-migrate-java.version>3.9.0</rewrite-migrate-java.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.openrewrite.maven</groupId>
+                <artifactId>rewrite-maven-plugin</artifactId>
+                <version>${rewrite-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>run-openrewrite</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <activeRecipes>
+                        <!-- Spring Boot related -->
+                        <recipe>org.openrewrite.java.spring.boot3.SpringBootProperties_3_3</recipe>
+
+                        <!-- Java related -->
+                        <recipe>org.openrewrite.java.format.AutoFormat</recipe>
+                        <recipe>org.openrewrite.java.RemoveUnusedImports</recipe>
+                        <recipe>org.openrewrite.java.OrderImports</recipe>
+
+                        <!-- Configuration related -->
+                        <!-- Maven related -->
+                        <recipe>org.openrewrite.maven.BestPractices</recipe>
+                        <recipe>org.openrewrite.maven.OrderPomElements</recipe>
+                        <recipe>org.openrewrite.maven.RemoveUnusedProperties</recipe>
+                        <recipe>org.openrewrite.maven.UpdateMavenWrapper</recipe>
+                    </activeRecipes>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.openrewrite.recipe</groupId>
+                        <artifactId>rewrite-spring</artifactId>
+                        <version>${rewrite-spring.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.openrewrite.recipe</groupId>
+                        <artifactId>rewrite-static-analysis</artifactId>
+                        <version>${rewrite-static-analysis.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.openrewrite.recipe</groupId>
+                        <artifactId>rewrite-migrate-java</artifactId>
+                        <version>${rewrite-migrate-java.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

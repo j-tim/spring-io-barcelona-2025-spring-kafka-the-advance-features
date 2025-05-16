@@ -1,0 +1,67 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: non-blocking-retries-application
+
+  kafka:
+    bootstrap-servers: localhost:9092
+
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+
+    template:
+      observation-enabled: true
+    consumer:
+      group-id: non-blocking-retries-consumer-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+      properties:
+        # We use Avro specific records here
+        specific.avro.reader: true
+    listener:
+      observation-enabled: true
+
+    properties:
+      schema.registry.url: http://localhost:8081
+
+    # TODO show in the demo. Non blocking retries configured using configuration
+    # Default values for non blocking retry feature:
+    # Enabled: false
+    # Attempts: 3
+    # Backoff: delay: 1 second, multiplier: 0.0, max delay: 30 seconds
+    retry:
+      topic:
+        enabled: true
+        attempts: 4
+        backoff:
+          delay: 1s
+          multiplier: 2
+          max-delay: 5s
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+    enabled: true
+  endpoints:
+    web:
+      exposure:
+        # Open up all Spring Boot Actuator endpoints for the demo, don't do this in production!
+        include: "*"
+
+  endpoint:
+    health:
+      show-details: always
+
+  metrics:
+    tags:
+      application: ${spring.application.name}
+      env: local
+  otlp:
+    tracing:
+      endpoint: "http://localhost:4317"
+      transport: grpc

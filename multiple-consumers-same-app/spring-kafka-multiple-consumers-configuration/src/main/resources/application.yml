@@ -1,0 +1,65 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: spring-kafka-multiple-consumers-configuration
+
+  kafka:
+    bootstrap-servers: localhost:9092
+
+    consumer:
+      custom-kafka-consumers:
+        - topic-names:
+          - stock-quotes-avro
+# TODO Show in demo
+#          - stock-quotes-avro-second
+          enabled: true
+          message-listener-class: com.example.spring.kafka.consumer.kafka.handlers.StockQuoteAvroMessageListener
+          configs:
+            group-id: custom-kafka-consumer-group-avro
+            auto-offset-reset: earliest
+# TODO Show in demo
+#        - topic-names:
+#          - stock-quotes-json
+#          enabled: true
+#          message-listener-class: com.example.spring.kafka.consumer.kafka.handlers.StockQuoteJsonMessageListener
+#          configs:
+#            group-id: custom-kafka-consumer-group-json
+#            auto-offset-reset: earliest
+#            key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#            value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+#            properties:
+#              spring.json.trusted.packages: com.example.kafka.event.api.json
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+      properties:
+        schema.registry.url: http://localhost:8081
+        # We use Avro specific records here
+        specific.avro.reader: true
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+    enabled: true
+  endpoints:
+    web:
+      exposure:
+        # Open up all Spring Boot Actuator endpoints for the demo, don't do this in production!
+        include: "*"
+
+  endpoint:
+    health:
+      show-details: always
+
+  metrics:
+    tags:
+      application: ${spring.application.name}
+      env: local
+  otlp:
+    tracing:
+      export:
+        enabled: true
+      endpoint: "http://localhost:4318/v1/traces"
+      transport: http

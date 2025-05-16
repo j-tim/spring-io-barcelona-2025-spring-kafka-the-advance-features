@@ -1,0 +1,45 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: spring-kafka-multiple-consumers-beans
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+      properties:
+        # We use Avro specific records here
+        specific.avro.reader: true
+      group-id: multiple-consumer-beans-group-avro
+      auto-offset-reset: earliest
+    listener:
+      observation-enabled: true
+    properties:
+      schema.registry.url: http://localhost:8081
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+    enabled: true
+  endpoints:
+    web:
+      exposure:
+        # Open up all Spring Boot Actuator endpoints for the demo, don't do this in production!
+        include: "*"
+
+  endpoint:
+    health:
+      show-details: always
+
+  metrics:
+    tags:
+      application: ${spring.application.name}
+      env: local
+  otlp:
+    tracing:
+      transport: http
+      endpoint: "http://localhost:4318/v1/traces"

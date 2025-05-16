@@ -1,0 +1,38 @@
+### Produce to Kafka (via Rest API)
+
+### Happy flow scenario
+
+POST http://localhost:8086/api/events
+Content-Type: application/json
+
+{
+  "customerId": "1234",
+  "action": "PROCESS",
+  "description": "Happy flow"
+}
+
+### Non recoverable processing exception scenario
+
+POST http://localhost:8086/api/events
+Content-Type: application/json
+
+{
+  "customerId": "5678",
+  "action": "NON_RECOVERABLE_EXCEPTION",
+  "description": "Non recoverable scenario"
+}
+
+
+### Random failure scenario: 50/50  change the processing will fail
+
+POST http://localhost:8086/api/events
+Content-Type: application/json
+
+{
+  "customerId": "9876",
+  "action": "RANDOM_FAILURE",
+  "description": "Random failure scenario"
+}
+
+
+

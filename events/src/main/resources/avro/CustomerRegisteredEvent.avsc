@@ -1,0 +1,24 @@
+{
+  "namespace": "com.example.spring.kafka.non.blocking.retries",
+  "type": "record",
+  "name": "CustomerRegisteredEvent",
+  "version": 1,
+  "doc": "Avro schema.",
+  "fields": [
+    {
+      "name": "customerId",
+      "type": "string",
+      "doc": "The unique identifier of the customer."
+    },
+    {
+      "name": "action",
+      "type": "string",
+      "doc": "The event action."
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "doc": "Description."
+    }
+  ]
+}

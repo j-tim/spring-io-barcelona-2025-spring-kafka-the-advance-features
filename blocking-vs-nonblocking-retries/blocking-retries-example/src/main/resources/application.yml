@@ -1,0 +1,46 @@
+server:
+  port: 8086
+
+spring:
+  application:
+    name: blocking-retries-application
+
+  kafka:
+    bootstrap-servers: localhost:9092
+
+    consumer:
+      group-id: blocking-retries-consumer-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+      properties:
+        # We use Avro specific records here
+        specific.avro.reader: true
+        schema.registry.url: http://localhost:8081
+
+    listener:
+      observation-enabled: true
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+    enabled: true
+  endpoints:
+    web:
+      exposure:
+        # Open up all Spring Boot Actuator endpoints for the demo, don't do this in production!
+        include: "*"
+
+  endpoint:
+    health:
+      show-details: always
+
+  metrics:
+    tags:
+      application: ${spring.application.name}
+      env: local
+  otlp:
+    tracing:
+      endpoint: "http://localhost:4317"
+      transport: grpc

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.example</groupId>
+  <artifactId>multiple-consumers-same-app</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>multiple-consumers-same-app</name>
+  <description>Example multiple Kafka consumer in same application</description>
+
+  <modules>
+    <module>spring-kafka-multiple-consumers-annotations</module>
+    <module>spring-kafka-multiple-consumers-beans</module>
+    <module>spring-kafka-multiple-consumers-configuration</module>
+    <module>spring-kafka-producer</module>
+  </modules>
+
+</project>

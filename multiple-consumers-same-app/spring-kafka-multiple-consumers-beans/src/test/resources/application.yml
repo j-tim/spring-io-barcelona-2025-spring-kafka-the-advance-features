@@ -1,0 +1,18 @@
+spring:
+  kafka:
+    bootstrap-servers: ${spring.embedded.kafka.brokers}
+
+    producer:
+      bootstrap-servers: ${spring.embedded.kafka.brokers}
+      properties:
+        schema.registry.url: http://mock:8081
+
+    consumer:
+      group-id: my-consumer-group
+      auto-offset-reset: earliest
+      properties:
+        # We use Avro specific records here
+        specific.avro.reader: true
+
+    properties:
+      schema.registry.url: http://mock:8081
