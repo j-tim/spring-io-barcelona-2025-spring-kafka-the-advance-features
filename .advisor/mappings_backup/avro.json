@@ -1,0 +1,127 @@
+{
+  "slug" : "avro",
+  "coordinates" : [ "org.apache.avro:avro" ],
+  "repositoryUrl" : "",
+  "rewrite" : {
+    "1.4.x" : {
+      "recipes" : [ ],
+      "nextRewrite" : {
+        "version" : "1.5.x",
+        "project" : null
+      },
+      "requirements" : {
+        "supportedGenerations" : {
+          "jackson" : "1.4.x"
+        },
+        "excludedArtifacts" : [ ]
+      }
+    },
+    "1.5.x" : {
+      "recipes" : [ ],
+      "nextRewrite" : {
+        "version" : "1.6.x",
+        "project" : null
+      },
+      "requirements" : {
+        "supportedGenerations" : {
+          "jackson" : "1.7.x"
+        },
+        "excludedArtifacts" : [ ]
+      }
+    },
+    "1.6.x" : {
+      "recipes" : [ ],
+      "nextRewrite" : {
+        "version" : "1.7.x",
+        "project" : null
+      },
+      "requirements" : {
+        "supportedGenerations" : {
+          "jackson" : "1.8.x"
+        },
+        "excludedArtifacts" : [ ]
+      }
+    },
+    "1.7.x" : {
+      "recipes" : [ ],
+      "nextRewrite" : {
+        "version" : "1.8.x",
+        "project" : null
+      },
+      "requirements" : {
+        "supportedGenerations" : {
+          "apache-commons-compress" : "1.4.x",
+          "jackson" : "1.9.x"
+        },
+        "excludedArtifacts" : [ ]
+      }
+    },
+    "1.8.x" : {
+      "recipes" : [ ],
+      "nextRewrite" : {
+        "version" : "1.9.x",
+        "project" : null
+      },
+      "requirements" : {
+        "supportedGenerations" : {
+          "apache-commons-compress" : "1.8.x",
+          "jackson" : "1.9.x"
+        },
+        "excludedArtifacts" : [ ]
+      }
+    },
+    "1.9.x" : {
+      "recipes" : [ ],
+      "nextRewrite" : {
+        "version" : "1.10.x",
+        "project" : null
+      },
+      "requirements" : {
+        "supportedGenerations" : {
+          "apache-commons-compress" : "1.19.x",
+          "jackson" : "2.10.x"
+        },
+        "excludedArtifacts" : [ ]
+      }
+    },
+    "1.10.x" : {
+      "recipes" : [ ],
+      "nextRewrite" : {
+        "version" : "1.11.x",
+        "project" : null
+      },
+      "requirements" : {
+        "supportedGenerations" : {
+          "apache-commons-compress" : "1.20.x",
+          "jackson" : "2.12.x"
+        },
+        "excludedArtifacts" : [ ]
+      }
+    },
+    "1.11.x" : {
+      "recipes" : [ ],
+      "nextRewrite" : {
+        "version" : "1.12.x",
+        "project" : null
+      },
+      "requirements" : {
+        "supportedGenerations" : {
+          "apache-commons-compress" : "1.26.x",
+          "jackson" : "2.14.x"
+        },
+        "excludedArtifacts" : [ ]
+      }
+    },
+    "1.12.x" : {
+      "recipes" : [ ],
+      "nextRewrite" : null,
+      "requirements" : {
+        "supportedGenerations" : {
+          "apache-commons-compress" : "1.28.x",
+          "jackson" : "2.20.x"
+        },
+        "excludedArtifacts" : [ ]
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "slug" : "logredactor",
+  "coordinates" : [ "io.confluent:logredactor", "io.confluent:logredactor-metrics" ],
+  "repositoryUrl" : "",
+  "rewrite" : {
+    "1.0.x" : {
+      "recipes" : [ ],
+      "nextRewrite" : null,
+      "requirements" : {
+        "supportedGenerations" : { },
+        "excludedArtifacts" : [ ]
+      }
+    }
+  }
+}

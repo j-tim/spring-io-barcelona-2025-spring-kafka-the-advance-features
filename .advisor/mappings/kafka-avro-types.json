@@ -1,0 +1,80 @@
+{
+  "slug" : "kafka-avro-types",
+  "coordinates" : [ "io.confluent:kafka-avro-types" ],
+  "repositoryUrl" : "",
+  "rewrite" : {
+    "8.0.x" : {
+      "recipes" : [ ],
+      "nextRewrite" : {
+        "version" : "8.1.x"
+      },
+      "requirements" : {
+        "supportedGenerations" : {
+          "apache-commons-compress" : "1.26.x",
+          "avro" : "1.12.x",
+          "jackson" : "2.22.x",
+          "logredactor" : "1.0.x"
+        },
+        "excludedArtifacts" : [ ]
+      }
+    },
+    "8.1.x" : {
+      "recipes" : [ ],
+      "nextRewrite" : {
+        "version" : "8.2.x"
+      },
+      "requirements" : {
+        "supportedGenerations" : {
+          "apache-commons-compress" : "1.26.x",
+          "avro" : "1.12.x",
+          "jackson" : "2.22.x",
+          "logredactor" : "1.0.x"
+        },
+        "excludedArtifacts" : [ ]
+      }
+    },
+    "8.2.x" : {
+      "recipes" : [ ],
+      "nextRewrite" : {
+        "version" : "8.3.x"
+      },
+      "requirements" : {
+        "supportedGenerations" : {
+          "apache-commons-compress" : "1.26.x",
+          "avro" : "1.12.x",
+          "jackson" : "2.22.x",
+          "logredactor" : "1.0.x"
+        },
+        "excludedArtifacts" : [ ]
+      }
+    },
+    "8.3.x" : {
+      "recipes" : [ ],
+      "nextRewrite" : {
+        "version" : "8.4.x"
+      },
+      "requirements" : {
+        "supportedGenerations" : {
+          "apache-commons-compress" : "1.26.x",
+          "avro" : "1.12.x",
+          "jackson" : "2.22.x",
+          "logredactor" : "1.0.x"
+        },
+        "excludedArtifacts" : [ ]
+      }
+    },
+    "8.4.x" : {
+      "recipes" : [ ],
+      "nextRewrite" : null,
+      "requirements" : {
+        "supportedGenerations" : {
+          "apache-commons-compress" : "1.26.x",
+          "avro" : "1.12.x",
+          "jackson" : "2.22.x",
+          "logredactor" : "1.0.x"
+        },
+        "excludedArtifacts" : [ ]
+      }
+    }
+  }
+}

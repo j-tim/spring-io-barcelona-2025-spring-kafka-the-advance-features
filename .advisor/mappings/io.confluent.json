@@ -1,0 +1,98 @@
+{
+  "slug" : "io.confluent",
+  "coordinates" : [ "io.confluent:kafka-avro-serializer", "io.confluent:kafka-schema-registry-client" ],
+  "repositoryUrl" : "",
+  "rewrite" : {
+    "2.0.x" : {
+      "recipes" : [ ],
+      "nextRewrite" : {
+        "version" : "2.1.x"
+      },
+      "requirements" : {
+        "supportedGenerations" : {
+          "avro" : "1.7.x",
+          "jackson" : "2.5.x"
+        },
+        "excludedArtifacts" : [ ]
+      }
+    },
+    "2.1.x" : {
+      "recipes" : [ ],
+      "nextRewrite" : {
+        "version" : "3.0.x"
+      },
+      "requirements" : {
+        "supportedGenerations" : {
+          "avro" : "1.7.x",
+          "jackson" : "2.5.x"
+        },
+        "excludedArtifacts" : [ ]
+      }
+    },
+    "3.0.x" : {
+      "recipes" : [ ],
+      "nextRewrite" : {
+        "version" : "3.1.x"
+      },
+      "requirements" : {
+        "supportedGenerations" : {
+          "avro" : "1.7.x",
+          "jackson" : "2.5.x"
+        },
+        "excludedArtifacts" : [ ]
+      }
+    },
+    "3.1.x" : {
+      "recipes" : [ ],
+      "nextRewrite" : {
+        "version" : "3.2.x"
+      },
+      "requirements" : {
+        "supportedGenerations" : {
+          "avro" : "1.7.x",
+          "jackson" : "2.5.x"
+        },
+        "excludedArtifacts" : [ ]
+      }
+    },
+    "3.2.x" : {
+      "recipes" : [ ],
+      "nextRewrite" : {
+        "version" : "3.3.x"
+      },
+      "requirements" : {
+        "supportedGenerations" : {
+          "avro" : "1.7.x",
+          "jackson" : "2.9.x",
+          "jackson-annotations" : "2.9.x"
+        },
+        "excludedArtifacts" : [ ]
+      }
+    },
+    "3.3.x" : {
+      "recipes" : [ ],
+      "nextRewrite" : {
+        "version" : "4.0.x"
+      },
+      "requirements" : {
+        "supportedGenerations" : {
+          "avro" : "1.8.x",
+          "jackson" : "2.9.x",
+          "jackson-annotations" : "2.9.x"
+        },
+        "excludedArtifacts" : [ ]
+      }
+    },
+    "4.0.x" : {
+      "recipes" : [ ],
+      "nextRewrite" : null,
+      "requirements" : {
+        "supportedGenerations" : {
+          "avro" : "1.8.x",
+          "jackson" : "2.9.x"
+        },
+        "excludedArtifacts" : [ ]
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "slug" : "javafaker",
+  "coordinates" : [ "com.github.javafaker:javafaker" ],
+  "repositoryUrl" : "",
+  "rewrite" : {
+    "0.17.x" : {
+      "recipes" : [ ],
+      "nextRewrite" : {
+        "version" : "1.0.x",
+        "project" : null
+      },
+      "requirements" : {
+        "supportedGenerations" : {
+          "apache-commons-lang" : "3.5.x"
+        },
+        "excludedArtifacts" : [ ]
+      }
+    },
+    "1.0.x" : {
+      "recipes" : [ ],
+      "nextRewrite" : null,
+      "requirements" : {
+        "supportedGenerations" : {
+          "apache-commons-lang" : "3.5.x"
+        },
+        "excludedArtifacts" : [ ]
+      }
+    }
+  }
+}

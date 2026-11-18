@@ -6,11 +6,11 @@
     "1.4.x" : {
       "recipes" : [ ],
       "nextRewrite" : {
-        "version" : "1.5.x",
-        "project" : null
+        "version" : "1.5.x"
       },
       "requirements" : {
         "supportedGenerations" : {
+          "apache-commons-lang" : "2.5.x",
           "jackson" : "1.4.x"
         },
         "excludedArtifacts" : [ ]
@@ -19,8 +19,7 @@
     "1.5.x" : {
       "recipes" : [ ],
       "nextRewrite" : {
-        "version" : "1.6.x",
-        "project" : null
+        "version" : "1.6.x"
       },
       "requirements" : {
         "supportedGenerations" : {
@@ -32,8 +31,7 @@
     "1.6.x" : {
       "recipes" : [ ],
       "nextRewrite" : {
-        "version" : "1.7.x",
-        "project" : null
+        "version" : "1.7.x"
       },
       "requirements" : {
         "supportedGenerations" : {
@@ -45,8 +43,7 @@
     "1.7.x" : {
       "recipes" : [ ],
       "nextRewrite" : {
-        "version" : "1.8.x",
-        "project" : null
+        "version" : "1.8.x"
       },
       "requirements" : {
         "supportedGenerations" : {
@@ -59,8 +56,7 @@
     "1.8.x" : {
       "recipes" : [ ],
       "nextRewrite" : {
-        "version" : "1.9.x",
-        "project" : null
+        "version" : "1.9.x"
       },
       "requirements" : {
         "supportedGenerations" : {
@@ -73,8 +69,7 @@
     "1.9.x" : {
       "recipes" : [ ],
       "nextRewrite" : {
-        "version" : "1.10.x",
-        "project" : null
+        "version" : "1.10.x"
       },
       "requirements" : {
         "supportedGenerations" : {
@@ -87,8 +82,7 @@
     "1.10.x" : {
       "recipes" : [ ],
       "nextRewrite" : {
-        "version" : "1.11.x",
-        "project" : null
+        "version" : "1.11.x"
       },
       "requirements" : {
         "supportedGenerations" : {
@@ -101,8 +95,7 @@
     "1.11.x" : {
       "recipes" : [ ],
       "nextRewrite" : {
-        "version" : "1.12.x",
-        "project" : null
+        "version" : "1.12.x"
       },
       "requirements" : {
         "supportedGenerations" : {
@@ -118,7 +111,7 @@
       "requirements" : {
         "supportedGenerations" : {
           "apache-commons-compress" : "1.28.x",
-          "jackson" : "2.20.x"
+          "jackson" : "2.22.x"
         },
         "excludedArtifacts" : [ ]
       }
